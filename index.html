@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="preconnect" href="https://fonts.google.com/specimen/Kumbh+Sans">
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,6 +16,55 @@
   </style>
 </head>
 <body>
+  <div class="nav">
+    <div class="nav__menu">
+      <img src="./assets/images/logo.svg" alt="">
+      <span>Collections</span>
+      <span>Men</span>
+      <span>Women</span>
+      <span>About</span>
+      <span>Contact</span>
+    </div>
+    <div class="nav__cart">
+      <img src="./assets/images/icon-cart.svg" alt="" class="cart__icon">
+      <img src="./assets/images/image-avatar.png" alt="" class="profile">
+    </div>
+  </div>
+  <div class="product">
+    <div class="product_img">
+      <img class="product__full-img" src="./assets/images/image-product-1.jpg" alt="">
+      <div class="product__thumbnail">
+        <img src="./assets/images/image-product-1-thumbnail.jpg" alt="">
+        <img src="./assets/images/image-product-2-thumbnail.jpg" alt="">
+        <img src="./assets/images/image-product-3-thumbnail.jpg" alt="">
+        <img src="./assets/images/image-product-4-thumbnail.jpg" alt="">
+      </div>
+    </div>
+    <div class="product_detail">
+      <h3>SNEAKER COMPANY</h3>
+      <h2>Fall Limited Edition 
+        Sneakers</h2>
+      <p>These low-profile sneakers are your perfect casual wear
+        companion. Featuring a durable rubber outer sole, they'll
+        withstand everything the weather can offer.
+      </p>
+      <div class="detail__price">
+        <div class="price">
+          <span class="discount-price">$125.00</span>
+          <span class="discount">50%</span>
+        </div>
+        <span class="actual-price">$250.00</span>
+      </div>
+      <div class="add_cart">
+        <div class="product-quantity">
+          <img src="./assets/images/icon-minus.svg" alt="">
+          <span>0</span>
+          <img src="./assets/images/icon-plus.svg"></img>
+        </div>
+        <span class="btn_cart"><img src="./assets/images/icon-cart-btn.svg" alt=""> Add to cart</span>
+      </div>
+    </div>
+  </div>
 <!-- 
   Collections
   Men
