@@ -26,18 +26,22 @@
       <span>Contact</span>
     </div>
     <div class="nav__cart">
-      <img src="./assets/images/icon-cart.svg" alt="" class="cart__icon">
+      <img onclick="cartDropdown()" src="./assets/images/icon-cart.svg" alt="" class="cart__icon">
       <img src="./assets/images/image-avatar.png" alt="" class="profile">
+    </div>
+    <div class="cart__detail" id="dropDown">
+        <h3>Cart</h3>
+        <p>The cart is empty</p>
     </div>
   </div>
   <div class="product">
     <div class="product_img">
-      <img class="product__full-img" src="./assets/images/image-product-1.jpg" alt="">
+      <img id="mainImg" onclick ="showFullImg()" class="product__full-img" src="./assets/images/image-product-1.jpg" alt="">
       <div class="product__thumbnail">
-        <img src="./assets/images/image-product-1-thumbnail.jpg" alt="">
-        <img src="./assets/images/image-product-2-thumbnail.jpg" alt="">
-        <img src="./assets/images/image-product-3-thumbnail.jpg" alt="">
-        <img src="./assets/images/image-product-4-thumbnail.jpg" alt="">
+        <img  onclick="changeImg('1')" id = "img1" class="product__thumbnail--active" src="./assets/images/image-product-1-thumbnail.jpg" alt="">
+        <img  onclick="changeImg('2')" id = "img2" src="./assets/images/image-product-2-thumbnail.jpg" alt="">
+        <img  onclick="changeImg('3')" id = "img3" src="./assets/images/image-product-3-thumbnail.jpg" alt="">
+        <img  onclick="changeImg('4')" id = "img4" src="./assets/images/image-product-4-thumbnail.jpg" alt="">
       </div>
     </div>
     <div class="product_detail">
@@ -65,7 +69,11 @@
       </div>
     </div>
   </div>
+  <script src="./js/index.js"></script>
 <!-- 
+
+  bg color #404040
+
   Collections
   Men
   Women
