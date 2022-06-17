@@ -58,7 +58,6 @@ function showFullImg() {
       fullThumbnail[i].classList.remove("full-img-view__thumbnail--active")
     }
   }
-  console.log(fullThumbnail)
   fullImg.src = mainImg.src
   fullView.classList.add("full-img-view--active")
 }
@@ -68,11 +67,22 @@ function closeFullImg() {
 }
 
 function changeFullViewImg(name) {
-  if( i < imgAry.length) {
-    fullImg.src = `./assets/images/image-product-${imgAry[imgIndex]}.jpg`;
+  if(name == 'next') {
     imgIndex++;
-  } else {
-    imgIndex = 0;
-    fullImg.src = `./assets/images/image-product-${imgAry[imgIndex]}.jpg`;
+    if(imgIndex < imgAry.length) {
+      fullImg.src = `./assets/images/image-product-${imgAry[imgIndex]}.jpg`
+    } else {
+      imgIndex = 0;
+      fullImg.src = `./assets/images/image-product-${imgAry[imgIndex]}.jpg`
+    }
+  }
+  if(name == 'previous') {
+    imgIndex--;
+    if(imgIndex >= 0) {
+      fullImg.src = `./assets/images/image-product-${imgAry[imgIndex]}.jpg`
+    }else {
+      imgIndex = 3
+      fullImg.src = `./assets/images/image-product-${imgAry[imgIndex]}.jpg`
+    }
   }
 }
