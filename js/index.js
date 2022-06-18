@@ -22,8 +22,6 @@ const fullView = document.getElementById("fullView");
 const thumbnailDiv = document.getElementsByClassName("product__thumbnail");
 const thumbnailChildNodes = thumbnailDiv[0].childNodes;
 const fullImg = document.getElementById("fullImg");
-const imgAry = [1,2,3,4];
-let imgIndex = 0;
 const thumbnailImg = [];
 thumbnailChildNodes.forEach(element => {
   if(element.localName == 'img') {
@@ -38,7 +36,8 @@ fullThumbnailChildNodes.forEach(element => {
     fullThumbnail.push(element);
   }
 })
-
+const productQuantity = document.getElementById('quantity');
+let quantity = productQuantity.innerText;
 // --------------------------- change img function -----------------------------
 function changeImg(name) {
   for (let i = 0; i < 4; i++) {
@@ -51,7 +50,7 @@ function changeImg(name) {
     mainImg.src = `./assets/images/image-product-${name}.jpg`
     thumbnail.classList.add("product__thumbnail--active");
 }
-
+// -------------------------- show full image view -----------------------------
 function showFullImg() {
   for(let i = 0; i< 4; i++) {
     if(fullThumbnail[i].classList.contains("product__thumbnail--active")) {
@@ -61,11 +60,14 @@ function showFullImg() {
   fullImg.src = mainImg.src
   fullView.classList.add("full-img-view--active")
 }
-
+// -------------------------- close full image view ----------------------------
 function closeFullImg() {
   fullView.classList.remove("full-img-view--active");
 }
 
+// ------------------------- change image from arrow ---------------------------
+const imgAry = [1,2,3,4];
+let imgIndex = 0;
 function changeFullViewImg(name) {
   if(name == 'next') {
     imgIndex++;
@@ -81,8 +83,21 @@ function changeFullViewImg(name) {
     if(imgIndex >= 0) {
       fullImg.src = `./assets/images/image-product-${imgAry[imgIndex]}.jpg`
     }else {
-      imgIndex = 3
+      imgIndex = 3;
       fullImg.src = `./assets/images/image-product-${imgAry[imgIndex]}.jpg`
     }
   }
+}
+
+
+// ------------------------ product quantity function --------------------------
+function changeQuantity (name) {
+    if(name == 'plus') {
+      quantity++;
+    }else {
+      if(quantity > 0) {
+        quantity--;
+      }
+    }
+  productQuantity.innerHTML = quantity;
 }
