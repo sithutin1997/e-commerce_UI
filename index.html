@@ -47,7 +47,10 @@
     </div>
     <div class="cart__detail" id="dropDown">
         <h3>Cart</h3>
-        <p>The cart is empty</p>
+        <div class="cart-product" id="productList">
+
+        </div>
+        <p id="emptyCart">The cart is empty</p>
     </div>
   </div>
   <div class="product">
@@ -81,7 +84,7 @@
           <span id="quantity">0</span>
           <img src="./assets/images/icon-plus.svg" id="plusBtn" onclick="changeQuantity('plus')"></img>
         </div>
-        <span class="btn_cart"><img src="./assets/images/icon-cart-btn.svg" alt=""> Add to cart</span>
+        <span class="btn_cart" onclick="addToCart()"><img src="./assets/images/icon-cart-btn.svg" alt=""> Add to cart</span>
       </div>
     </div>
   </div>

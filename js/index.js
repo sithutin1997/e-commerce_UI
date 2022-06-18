@@ -38,6 +38,14 @@ fullThumbnailChildNodes.forEach(element => {
 })
 const productQuantity = document.getElementById('quantity');
 let quantity = productQuantity.innerText;
+
+let cartProducts = [];
+let cartProduct = {
+  name: "Fall Limited Edition Sneakers",
+  price: "$125.00",
+  quantity: 0,
+  totalPrice: "$"+0,
+}
 // --------------------------- change img function -----------------------------
 function changeImg(name) {
   for (let i = 0; i < 4; i++) {
@@ -91,8 +99,8 @@ function changeFullViewImg(name) {
 
 
 // ------------------------ product quantity function --------------------------
-function changeQuantity (name) {
-    if(name == 'plus') {
+function changeQuantity (para) {
+    if(para == 'plus') {
       quantity++;
     }else {
       if(quantity > 0) {
@@ -100,4 +108,26 @@ function changeQuantity (name) {
       }
     }
   productQuantity.innerHTML = quantity;
+}
+// -------------------------- add to cart function -----------------------------
+
+function addToCart() {
+    const emptyCart = document.getElementById('emptyCart')
+    emptyCart.classList.add('cart--empty');
+    let cartQty = quantity;
+    let newCartProduct = {...cartProduct};
+    let totalPrice = 125.00 * cartQty;
+    const productList = document.createElement("div");
+    const productImg = document.createElement("img");
+    const productName = document.createElement("span");
+    const productQty = document.createElement("span");
+    console.log(productList); 
+    newCartProduct.totalPrice = totalPrice;
+    newCartProduct.quantity = quantity;
+    // console.log(newCartProduct)
+
+    cartProducts.push(newCartProduct);
+    console.log(cartProducts)
+    quantity = 0;
+    productQuantity.innerHTML = quantity;
 }
